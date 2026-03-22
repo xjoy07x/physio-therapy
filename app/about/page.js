@@ -3,7 +3,7 @@ export const dynamic = "force-static";
 import React, { useEffect } from "react";
 import Image from "next/image";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import AboutImage from "../../public/aboutimg.jpg"; // Replace with your professional image
+// import AboutImage from "../../public/aboutimg.jpg"; // Replace with your professional image
 
 export default function AboutUs() {
   useEffect(() => {
@@ -205,7 +205,7 @@ export default function AboutUs() {
           <Row className="g-4">
             <Col md={4}>
               <Image
-                src={AboutImage}
+                src="/aboutimg.jpg"
                 alt="About Me"
                 className="rounded-4"
                 style={{ width: "100%", height: "90%", objectFit: "cover" }}
