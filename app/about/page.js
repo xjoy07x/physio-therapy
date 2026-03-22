@@ -205,7 +205,7 @@ export default function AboutUs() {
           <Row className="g-4">
             <Col md={4}>
               <Image
-                src={AboutImage}
+                src="../../public/aboutimg.jpg"
                 alt="About Me"
                 className="rounded-4"
                 style={{ width: "100%", height: "90%", objectFit: "cover" }}
