@@ -1,0 +1,83 @@
+:root {
+  /* Brand Colors */
+  --primary-green: #2b7a63;
+  --accent-green-dark: #1d5a3b;
+  --light-peach-background: #fbecdf;
+  --card-background: #ffffff;
+
+  /* Text Colors */
+  --text-dark: #184437;
+  --text-medium: #333333;
+  --text-light: #777777;
+
+  /* Footer */
+  --footer-bg: #1f2f2b;
+  --footer-accent: #9fe0c3;
+
+  /* Shadows */
+  --hero-card-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  --button-shadow: 0 4px 10px rgba(43, 122, 99, 0.2);
+  --button-shadow-hover: 0 6px 15px rgba(43, 122, 99, 0.3);
+}
+
+/* ===== Navbar link hover effect ===== */
+.navbar .nav-link {
+  position: relative;
+  color: #555555;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+/* underline */
+.navbar .nav-link:not(.btn)::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #2b7a63;
+  transition: width 0.3s ease;
+  transform: translateX(-50%);
+}
+
+/* hover */
+.navbar .nav-link:not(.btn):hover {
+  color: #2b7a63;
+}
+
+.navbar .nav-link:not(.btn):hover::after {
+  width: 80%;
+}
+
+/* ===== Book button hover (same as before) ===== */
+.navbar .btn {
+  padding: 7px 16px;
+  font-size: 1rem;
+  background-color: #2b7a63;
+  color: white !important;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(43, 122, 99, 0.25);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.navbar .btn:hover {
+  background-color: #1f5e4b;
+  box-shadow: 0 6px 15px rgba(43, 122, 99, 0.35);
+  transform: translateY(-2px);
+}
+/* Example using a general table text color change */
+table th,
+table td {
+  color: #b71111; /* Replace #333 with the exact hexadecimal or RGB color value of the other text */
+}
+
+/* Example using a class approach (if you've added classes to the cells) */
+.table-text {
+  color: #2a0202; /* Replace #333 with the desired color */
+}

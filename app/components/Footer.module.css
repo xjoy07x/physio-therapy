@@ -1,0 +1,140 @@
+/* ===============================
+   Footer
+   =============================== */
+
+.footer {
+  background-color: #1f2f2b;
+  color: #ffffff;
+  margin-top: 80px;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Container */
+.footerContainer {
+  max-width: 1140px;
+  margin: auto;
+  padding: 60px 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+}
+
+/* Brand */
+.footerBrand h3 {
+  font-size: 1.4em;
+  margin-bottom: 14px;
+}
+
+.footerBrand p {
+  font-size: 0.95em;
+  line-height: 1.7;
+  color: #d6e2de;
+  max-width: 380px;
+}
+
+/* Social */
+.footerSocial {
+  margin-top: 18px;
+  display: flex;
+  gap: 14px;
+}
+
+.footerSocialLink {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 16px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.footerSocialLink:hover {
+  background-color: #9fe0c3;
+  color: #1f2f2b;
+}
+
+/* Links */
+.footerLinks h4,
+.footerContact h4 {
+  font-size: 1.1em;
+  margin-bottom: 16px;
+}
+
+.footerLinks a {
+  display: block;
+  margin-bottom: 10px;
+  color: #d6e2de;
+  text-decoration: none;
+  font-size: 0.95em;
+}
+
+.footerLinks a:hover {
+  color: #9fe0c3;
+}
+
+/* Contact */
+.footerContact p {
+  font-size: 0.95em;
+  margin-bottom: 10px;
+  color: #d6e2de;
+}
+
+/* Bottom */
+.footerBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+  padding: 18px 20px;
+  font-size: 0.85em;
+  color: #c9d6d2;
+}
+
+/* Footer.module.css */
+
+/* Footer links hover */
+.footerLink {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footerLink:hover {
+  color: var(--color-primary); /* or your accent color */
+  transform: translateY(-2px);
+}
+
+/* Social icons hover */
+.footerIcon {
+  color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.footerIcon:hover {
+  background-color: #18e236; /* accent background */
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* ===============================
+   Responsive
+   =============================== */
+
+@media (max-width: 900px) {
+  .footerContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .footerContainer {
+    grid-template-columns: 1fr;
+    padding: 50px 25px;
+  }
+
+  .footerSocial {
+    justify-content: flex-start;
+  }
+}
