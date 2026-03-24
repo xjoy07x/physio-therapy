@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="row">
           {/* Brand */}
           <div className="col-lg-6 mb-4">
-            <h3>Physio Without Borders</h3>
+            <h3>Physio Without Border</h3>
             <p>
               Providing professional physiotherapy services with care,
               compassion, and expertise — wherever you are.
@@ -104,9 +104,9 @@ export default function Footer() {
           <div className="col-lg-2 mb-4">
             <h5>Contact</h5>
             <ul className="list-unstyled">
-              <li className={styles.footerText}>Email: info@physiowithoutborders.com</li>
-              <li className={styles.footerText}>Phone: +63 900 000 0000</li>
-              <li className={styles.footerText}>Philippines</li>
+              <li className={styles.footerText}>Email: hello@physiowithoutborder.com</li>
+              <li className={styles.footerText}>Phone: 0497902970</li>
+              <li className={styles.footerText}>Launceston Tasmania Australia</li>
             </ul>
           </div>
         </div>
