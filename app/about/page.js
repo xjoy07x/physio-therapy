@@ -203,12 +203,13 @@ export default function AboutUs() {
           style={{ backgroundColor: "var(--color-card)" }}
         >
           <Row className="g-4">
-            <Col md={4}>
+            <Col md={4} style={{ position: "relative", minHeight: "300px" }}>
               <Image
                 src="/aboutimg.jpg"
                 alt="About Me"
+                fill
                 className="rounded-4"
-                style={{ width: "100%", height: "90%", objectFit: "cover" }}
+                style={{ objectFit: "cover", borderRadius: "1rem" }}
               />
             </Col>
 

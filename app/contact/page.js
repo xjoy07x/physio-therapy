@@ -1,22 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
+import { Container, Row, Col, Card, Spinner } from "react-bootstrap";
 import { FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 
 export default function ContactPage() {
+  const [isIframeLoading, setIsIframeLoading] = useState(true);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    locationId: "",
-    subject: "",
-    message: "",
-  });
-  const [loading, setLoading] = useState(false);
 
   const locations = [
     { id: "1", name: "Deloraine Medical", address: "22 Tower Hill Street, Deloraine TAS 7304", phone: "(04) 0790 2970" },
@@ -26,82 +19,36 @@ export default function ContactPage() {
     { id: "5", name: "Beaconsfield Family Medical", address: "146 Weld St, Beaconsfield TAS 7270", phone: "(03) 6383 1511" }
   ];
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    const nameParts = formData.name.trim().split(" ");
-    const firstName = nameParts[0];
-    const lastName = nameParts.length > 1 ? nameParts.slice(1).join(" ") : "Enquiry";
-
-    const Swal = (await import("sweetalert2")).default;
-
-    try {
-      const response = await fetch("/api/nookal/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          firstName, lastName, email: formData.email,
-          locationId: formData.locationId, subject: formData.subject, message: formData.message,
-        }),
-      });
-
-      if (response.ok) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        Swal.fire({
-          title: "Message Sent!",
-          text: "Your inquiry has been sent to the clinic's Message Centre.",
-          icon: "success",
-          confirmButtonColor: "var(--color-primary-dark)",
-        });
-        setFormData({ name: "", email: "", locationId: "", subject: "", message: "" });
-      } else {
-        throw new Error("Failed to connect to Nookal");
-      }
-    } catch (err) {
-      Swal.fire({ title: "Submission Failed", icon: "error", confirmButtonColor: "#d33" });
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const textStyle = {
     color: "var(--color-accent)",
     fontSize: "var(--font-size-mlg)",
     fontWeight: "var(--font-weight-regular)",
   };
 
-  // Shared Header Style for alignment
   const headerStyle = {
     color: "var(--color-primary-dark)",
     fontWeight: "var(--font-weight-bold)",
-    fontSize: "2rem", // Explicitly set to ensure H1 and H2 match
+    fontSize: "2rem",
   };
 
   return (
     <div style={{ backgroundColor: "#ffff", paddingBottom: "100px" }}>
       <Container className="my-5">
         <Row className="g-4 d-flex align-items-stretch">
+          
           {/* Left Side: Clinic Information */}
-          <Col lg={5}>
+          <Col lg={4}>
             <Card 
-              className="pt-0 px-4 pb-4 pt-md-0 px-md-5 pb-md-5 shadow-sm border-0 h-100"
+              className="p-4 shadow-sm border-0 h-100"
               style={{ backgroundColor: "var(--color-card)", borderRadius: "15px" }}
             >
-              <h2 
-                className="border-start border-3 ps-3 mb-4 m-0" 
-                style={headerStyle}
-              >
+              <h2 className="border-start border-3 ps-3 mb-4" style={headerStyle}>
                 Our Locations
               </h2>
               {locations.map((loc) => (
                 <div key={loc.id} className="mb-4 ps-3">
                   <p className="mb-1" style={{ ...textStyle, fontWeight: "var(--font-weight-bold)", color: "var(--color-primary-dark)" }}>
-                      {loc.name}
+                    {loc.name}
                   </p>
                   <p className="mb-1" style={textStyle}>
                     <FaMapMarkerAlt className="me-2" style={{ color: "var(--color-primary-dark)" }} />
@@ -116,53 +63,46 @@ export default function ContactPage() {
             </Card>
           </Col>
 
-          {/* Right Side: Contact Form */}
-          <Col lg={7}>
+          {/* Right Side: Nookal Embed */}
+          <Col lg={8}>
             <Card 
-              className="pt-0 px-4 pb-4 pt-md-0 px-md-5 pb-md-5 shadow-sm border-0 h-100"
-              style={{ backgroundColor: "var(--color-card)", borderRadius: "15px" }}
+              className="p-4 shadow-sm border-0 h-100" 
+              style={{ backgroundColor: "var(--color-card)", borderRadius: "15px", position: "relative" }}
             >
-              <h1 
-                className="mb-4 m-0" 
-                style={headerStyle}
-              >
+              <h1 className="mb-4 text-center" style={headerStyle}>
                 Contact Us
               </h1>
-              
-              <Form onSubmit={handleSubmit} className="mt-4">
-                <Row className="g-3">
-                  <Col md={6}>
-                    <Form.Control name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} required style={{ padding: "12px" }} />
-                  </Col>
-                  <Col md={6}>
-                    <Form.Control type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} required style={{ padding: "12px" }} />
-                  </Col>
-                  <Col md={12}>
-                    <Form.Select name="locationId" value={formData.locationId} onChange={handleChange} required style={{ padding: "12px" }}>
-                      <option value="">Select a Clinic Location</option>
-                      {locations.map((l) => <option key={l.id} value={l.id}>{l.name}</option>)}
-                    </Form.Select>
-                  </Col>
-                  <Col md={12}>
-                    <Form.Control name="subject" placeholder="What is this regarding?" value={formData.subject} onChange={handleChange} required style={{ padding: "12px" }} />
-                  </Col>
-                  <Col md={12}>
-                    <Form.Control as="textarea" rows={4} name="message" placeholder="Write your message here..." value={formData.message} onChange={handleChange} required />
-                  </Col>
-                  <Col md={12}>
-                    <Button 
-                      type="submit" 
-                      disabled={loading} 
-                      className="w-100 py-3 text-white border-0 shadow-sm mt-2" 
-                      style={{ backgroundColor: "var(--color-primary-dark)", borderRadius: "50px", fontWeight: "var(--font-weight-bold)" }}
-                    >
-                      {loading ? "SENDING..." : "SEND MESSAGE"}
-                    </Button>
-                  </Col>
-                </Row>
-              </Form>
+
+              {/* Updated styled text */}
+              <p className="text-center mb-4" style={textStyle}>
+                Please check the reCAPTCHA at the bottom of the form to proceed.
+              </p>
+
+              <div style={{ borderRadius: "10px", overflow: "hidden", minHeight: "600px", position: "relative" }}>
+                {/* Loading Spinner */}
+                {isIframeLoading && (
+                  <div className="d-flex flex-column justify-content-center align-items-center" style={{ height: "400px" }}>
+                    <Spinner animation="border" style={{ color: "var(--color-primary-dark)" }} />
+                    <p className="mt-3" style={textStyle}>Loading Form...</p>
+                  </div>
+                )}
+
+                <iframe 
+                  src="https://auzone1.nookal.com/external/intakeform/embed?q=ZlkzL0lXbC9ucEtLRHBzQlFvMmVPM3JkajFGbnhYaTAvbW9XU0h1ZUVyRElwUlFqTEdYV2hRVmIrT3J3RWVrNlp3NFlXbVVZc1FKdW5qNVEzRDN2MFlSNkFrdFpsdGJaRUhpZmUrc3ZJNi9LYlpBT1c2ckNrYUpsTkJjOGMrMUxLdmZ4ZXFTakR5dm5jOElMTWpjRk1rdCtkMEQvMTBSUnRvY281a3NHeVBRPQ%3D%3D" 
+                  width="100%" 
+                  height="700px" // Increased to ensure the Finish button isn't hidden
+                  scrolling="no"
+                  onLoad={() => setIsIframeLoading(false)}
+                  style={{ 
+                    border: "none", 
+                    display: isIframeLoading ? "none" : "block" 
+                  }}
+                  title="Nookal Intake Form"
+                />
+              </div>
             </Card>
           </Col>
+
         </Row>
       </Container>
     </div>

@@ -11,7 +11,7 @@ export default function ServiceDetailHNP() {
       window.scrollTo({ top: 0, behavior: "smooth" }); // scroll to top on page load
     }, []);
 
-  return (
+  return ( 
     <div style={{ backgroundColor: "#ffff" }}>
       <Container className="py-5" style={{ paddingTop: "120px" }}>
         <h1

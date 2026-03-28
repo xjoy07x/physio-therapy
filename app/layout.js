@@ -16,7 +16,7 @@ const garamond = EB_Garamond({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={garamond.className}>
+    <html lang="en" className={garamond.className} suppressHydrationWarning>
       <body>
         <Navbar />
         <main>{children}</main>
