@@ -2,7 +2,7 @@
 export const dynamic = "force-static";
 import React, { useEffect } from "react";
 import Image from "next/image";
-import headneck from "../../../public/head&neckPain.png";
+import headneck from "../../../public/head&neckPain1.png";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { FaCheck } from "react-icons/fa";
 

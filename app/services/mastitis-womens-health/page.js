@@ -10,7 +10,7 @@ import {
   GiMuscleUp,
 } from "react-icons/gi";
 import Image from "next/image";
-import pelvicfloor from "../../../public/mastitis.png";
+import pelvicfloor from "../../../public/mastitis1.png";
 
 export default function ServiceDetailsWH() {
    useEffect(() => {

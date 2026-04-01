@@ -2,7 +2,7 @@
 export const dynamic = "force-static";
 import React, { useEffect } from "react";
 import Image from "next/image";
-import surgery from "../../../public/prepost.png";
+import surgery from "../../../public/prepost1.png";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { GiMuscleUp, GiLaserGun, GiHand, GiJawbone } from "react-icons/gi";
 import { FaCheck } from "react-icons/fa";

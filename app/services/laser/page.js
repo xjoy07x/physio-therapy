@@ -5,7 +5,7 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { GiLaserGun } from "react-icons/gi";
 import { FaCheck } from "react-icons/fa";
 import Image from "next/image";
-import laser from "../../../public/laser.png";
+import laser from "../../../public/laser1.png";
 
 export default function ServiceDetailLaser() {
    useEffect(() => {

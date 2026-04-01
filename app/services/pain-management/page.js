@@ -10,7 +10,7 @@ import {
   GiBodyBalance,
 } from "react-icons/gi";
 import { FaCheck } from "react-icons/fa";
-import pain from "../../../public/pm.png";
+import pain from "../../../public/pm1.png";
 import Image from "next/image";
 
 export default function ServiceDetailPM() {

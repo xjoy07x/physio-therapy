@@ -10,7 +10,7 @@ import {
 } from "react-icons/gi";
 import { FaCheck } from "react-icons/fa";
 import Image from "next/image";
-import laser from "../../../public/balance.png";
+import laser from "../../../public/balance1.png";
 
 export default function ServiceDetailBalance() {
    useEffect(() => {

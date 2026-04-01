@@ -2,7 +2,7 @@
 export const dynamic = "force-static";
 import React, { useEffect } from "react";
 import Image from "next/image";
-import tmj from "../../../public/tmj.png"; // put your image in the public folder
+import tmj from "../../../public/tmj1.png"; // put your image in the public folder
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import {
   GiMuscleUp,

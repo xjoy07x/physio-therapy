@@ -10,7 +10,7 @@ import {
 } from "react-icons/gi";
 import { FaCheck } from "react-icons/fa";
 import Image from "next/image";
-import dryneedling from "../../../public/dryneedling.png";
+import dryneedling from "../../../public/dryneedling1.png";
 
 export default function ServiceDetailDN() {
    useEffect(() => {

@@ -202,98 +202,97 @@ export default function AboutUs() {
           className="p-4 shadow-sm rounded-4"
           style={{ backgroundColor: "var(--color-card)" }}
         >
-          <Row className="g-4">
-            <Col md={4} style={{ position: "relative", minHeight: "300px" }}>
-              <Image
-                src="/aboutimg.jpg"
-                alt="About Me"
-                fill
-                className="rounded-4"
-                style={{ objectFit: "cover", borderRadius: "1rem" }}
-              />
-            </Col>
+          <Row className="g-5">
+          {/* IMAGE */}
+          <Col md={4} style={{ position: "relative", minHeight: "300px" }}>
+            <Image
+              src="/aboutimg.jpg"
+              alt="About Me"
+              fill
+              className="rounded-4"
+              style={{ objectFit: "cover", borderRadius: "1rem" }}
+            />
+          </Col>
 
-            <Col md={8}>
+          {/* TEXT */}
+          <Col md={8} className="ps-md-4">
+            <p
+              style={{
+                color: "var(--color-accent)",
+                fontSize: "var(--font-size-mlg)",
+                fontWeight: "var(--font-weight-regular)",
+              }}
+            >
+              I am dedicated to improving function, reducing pain, and enhancing
+              overall quality of life through comprehensive musculoskeletal and
+              pelvic health physiotherapy. I’m passionate about helping people feel
+              stronger, move with confidence, and reconnect with their bodies. My
+              career has taken me through a wide range of physiotherapy settings—from
+              acute rehabilitation, community/aged-care and neurology to pediatrics,
+              musculoskeletal care, and now expanding special interest in women’s and
+              pelvic health.
+            </p>
+
+            <p
+              style={{
+                color: "var(--color-accent)",
+                fontSize: "var(--font-size-mlg)",
+                fontWeight: "var(--font-weight-regular)",
+              }}
+            >
+              Since graduating in 2011, I’ve worked in private hospitals overseas
+              before settling in Launceston in 2017. Here in Australia, I’ve
+              continued to refine my MSK skills and develop a deep interest in
+              supporting women through all stages of life.
+            </p>
+
+            <p
+              style={{
+                color: "var(--color-accent)",
+                fontSize: "var(--font-size-mlg)",
+                fontWeight: "var(--font-weight-regular)",
+              }}
+            >
+              I believe in empowering people with knowledge, support, and practical
+              strategies that make a real difference. Every treatment plan I create
+              is personalized, realistic, and built around the individual—not just
+              their symptoms. My goal is to provide care that truly empowers you to
+              heal, strengthen, move, and thrive.
+            </p>
+
+            <Card
+              className="border-start border-3 border-success p-3 my-3"
+              style={{ backgroundColor: "var(--color-card)" }}
+            >
               <p
+                className="mb-0"
                 style={{
                   color: "var(--color-accent)",
-                  fontSize: "var(--font-size-mlg)",
-                  fontWeight: "var(--font-weight-regular)",
+                  fontWeight: "var(--font-weight-bold)",
                 }}
               >
-                I am dedicated to improving function, reducing pain, and
-                enhancing overall quality of life through comprehensive
-                musculoskeletal and pelvic health physiotherapy. I’m passionate
-                about helping people feel stronger, move with confidence, and
-                reconnect with their bodies. My career has taken me through a
-                wide range of physiotherapy settings—from acute rehabilitation,
-                community/aged-care and neurology to pediatrics, musculoskeletal
-                care, and now expanding special interest in women’s and pelvic
-                health.
+                <strong>
+                  <em>
+                    “I do not treat your scan or just your symptoms. I treat you —
+                    and how those symptoms affect your life, your relationships,
+                    and what is important to you.”
+                  </em>
+                </strong>
               </p>
+            </Card>
 
-              <p
-                style={{
-                  color: "var(--color-accent)",
-                  fontSize: "var(--font-size-mlg)",
-                  fontWeight: "var(--font-weight-regular)",
-                }}
-              >
-                Since graduating in 2011, I’ve worked in private hospitals
-                overseas before settling in Launceston in 2017. Here in
-                Australia, I’ve continued to refine my MSK skills and develop a
-                deep interest in supporting women through all stages of life.
-              </p>
-
-              <p
-                style={{
-                  color: "var(--color-accent)",
-                  fontSize: "var(--font-size-mlg)",
-                  fontWeight: "var(--font-weight-regular)",
-                }}
-              >
-                I believe in empowering people with knowledge, support, and
-                practical strategies that make a real difference. Every
-                treatment plan I create is personalized, realistic, and built
-                around the individual—not just their symptoms. My goal is to
-                provide care that truly empowers you to heal, strengthen, move,
-                and thrive.
-              </p>
-
-              <Card
-                className="border-start border-3 border-success p-3 my-3"
-                style={{ backgroundColor: "var(--color-card)" }}
-              >
-                <p
-                  className="mb-0"
-                  style={{
-                    color: "var(--color-accent)",
-                    fontWeight: "var(--font-weight-bold)",
-                  }}
-                >
-                  <strong>
-                    <em>
-                      “I do not treat your scan or just your symptoms. I treat
-                      you — and how those symptoms affect your life, your
-                      relationships, and what is important to you.”
-                    </em>
-                  </strong>
-                </p>
-              </Card>
-
-              <p
-                style={{
-                  color: "var(--color-accent)",
-                  fontSize: "var(--font-size-mlg)",
-                  fontWeight: "var(--font-weight-regular)",
-                }}
-              >
-                This reflects my belief that every person’s experience of pain
-                and recovery is unique and deserves care that sees the whole
-                individual.
-              </p>
-            </Col>
-          </Row>
+            <p
+              style={{
+                color: "var(--color-accent)",
+                fontSize: "var(--font-size-mlg)",
+                fontWeight: "var(--font-weight-regular)",
+              }}
+            >
+              This reflects my belief that every person’s experience of pain and
+              recovery is unique and deserves care that sees the whole individual.
+            </p>
+          </Col>
+        </Row>
 
           <Row className="text-center mt-4 g-4">
             <Col md={3}>

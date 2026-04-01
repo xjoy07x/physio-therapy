@@ -10,7 +10,7 @@ import {
 } from "react-icons/gi";
 import { FaCheck } from "react-icons/fa";
 import Image from "next/image";
-import backPain from "../../../public/backpain.png";
+import backPain from "../../../public/backpain1.png";
 
 export default function ServiceDetailBackPain() {
     useEffect(() => {
