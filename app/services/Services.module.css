@@ -1,0 +1,90 @@
+.servicesPageContainer {
+  background-color: #ffff; /* replaced variable */
+  min-height: 100vh;
+  padding: 50px 0;}
+
+.servicesHeader {
+  max-width: 900px;
+  margin: 0 auto 70px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.sectionTitle {
+  font-size: 3.2em;
+  font-weight: 700;
+  color: #2b7a63;
+  margin-bottom: 18px;
+}
+
+.sectionIntro {
+  font-size: 1.2em;
+  line-height: 1.8;
+  color: #555555;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 36px;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.serviceCard {
+  background-color: var(--color-card);
+  padding: 36px 30px;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.35s ease;
+}
+
+.serviceCard:hover {
+  background-color: #fff7f2;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+  border-color: #f5c5a0;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(63, 95, 78, 0.15);
+}
+
+.cardIconWrapper {
+  font-size: 42px;
+  color: #2b7a63;
+  margin-bottom: 18px;
+}
+
+.cardTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-black);
+  color: var(--color-heading);
+  margin-bottom: 12px;
+}
+
+.cardDescription {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-light);
+  line-height: 1.7;
+  color: var(--color-accent);
+  margin-bottom: 28px;
+}
+
+.learnMoreLink {
+  margin-top: auto;
+  font-weight: 600;
+  color: var(--color-heading);
+  text-decoration: none;
+  font-size: var(--font-size-md);
+}
+
+.serviceCard:hover .learnMoreLink {
+  text-decoration: underline;
+}

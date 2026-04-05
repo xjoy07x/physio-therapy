@@ -1,0 +1,61 @@
+.navLink {
+  position: relative;
+  padding: 8px 12px;
+  font-weight: 500;
+  color: #555;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--color-primary-dark);
+}
+
+.navLink:hover::after {
+  width: 80%;
+}
+
+/* ACTIVE */
+.active {
+  color: var(--color-accent);
+}
+
+.active::after {
+  width: 80%;
+}
+
+.bookButton {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary);
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 12px 32px;
+  box-shadow: 0 4px 10px rgba(43, 122, 99, 0.25);
+  transition: all 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+}
+
+.bookButton:hover {
+  background-color: #1f5e4b;
+  border-color: #1f5e4b;
+  box-shadow: 0 6px 15px rgba(43, 122, 99, 0.35);
+  transform: translateY(-2px);
+}

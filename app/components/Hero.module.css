@@ -1,0 +1,19 @@
+/* Book Button */
+.bookButton {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary);
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 12px 32px;
+  box-shadow: 0 4px 10px rgba(43, 122, 99, 0.25);
+  transition: all 0.3s ease;
+}
+
+.bookButton:hover {
+  background-color: #1f5e4b;
+  border-color: #1f5e4b;
+  box-shadow: 0 6px 15px rgba(43, 122, 99, 0.35);
+  transform: translateY(-2px);
+}

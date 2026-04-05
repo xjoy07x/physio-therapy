@@ -1,0 +1,70 @@
+html,
+body {
+  font-family: var(--font-garamond), serif;
+  font-weight: 400; /* default */
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Utility classes for weights */
+.font-400 {
+  font-weight: 400;
+}
+.font-500 {
+  font-weight: 500;
+}
+.font-600 {
+  font-weight: 600;
+}
+.font-700 {
+  font-weight: 700;
+}
+.font-800 {
+  font-weight: 800;
+}
+
+/* DatePicker responsive fix */
+.datepicker-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+@media (min-width: 850px) and (max-width: 1100px) {
+  .datepicker-wrapper {
+    transform: scale(0.85);
+    transform-origin: top center;
+  }
+}
+
+:root {
+  /* Brand colors */
+  --color-bg: #fff1e6;
+  --color-primary: #8faf9a;
+  --color-primary-dark: #3f5f4e;
+  --color-accent: #4a6a58;
+  --color-nav: #fff1e9;
+  --color-card: #f2f6ed;
+
+  /* Text */
+  --color-text-main: #4a4f4c;
+  --color-heading: #3f5f4e;
+
+  /* Utility */
+  --color-card-border: #8faf9a;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-mlg: 1.1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+
+  --font-weight-light: 400;
+  --font-weight-regular: 500;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 800;
+}
