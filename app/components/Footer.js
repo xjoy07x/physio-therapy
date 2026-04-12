@@ -104,7 +104,7 @@ export default function Footer() {
           <div className="col-lg-2 mb-4">
             <h5>Contact</h5>
             <ul className="list-unstyled">
-              <li className={styles.footerText}>Email: hello@physiowithoutborder.com</li>
+              <li className={styles.footerText}>Email: hello@physiowithoutborder.com.au</li>
               <li className={styles.footerText}>Phone: 0497902970</li>
               <li className={styles.footerText}>Launceston Tasmania Australia</li>
             </ul>
